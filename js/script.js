@@ -1,5 +1,4 @@
 'use strict';
-// На следующих занятиях здесь можно добавить обработчики учебных событий.
 // Google Tag устанавливается отдельно в head каждой HTML-страницы.
 const leadForm = document.querySelector('#lead-form');
 if (leadForm) {
@@ -12,5 +11,18 @@ if (leadForm) {
     }
     document.querySelector('#form-status').textContent =
       'Учебная форма проверена. Данные не отправлены.';
+  });
+}
+
+const programCta = document.querySelector('#program-cta');
+if (programCta) {
+  programCta.addEventListener('click', () => {
+    document.querySelector('#program-preview').hidden = false;
+    if (typeof gtag === 'function') {
+      gtag('event', 'cta_click', {
+        button_name: 'program',
+        page_section: 'hero'
+      });
+    }
   });
 }
