@@ -1,6 +1,6 @@
 'use strict';
 // Google Tag устанавливается отдельно в head каждой HTML-страницы.
-const leadForm = document.querySelector('#lead-form');
+const leadForm = document.querySelector('#contact-form');
 if (leadForm) {
   leadForm.addEventListener('submit', (event) => {
     event.preventDefault();
